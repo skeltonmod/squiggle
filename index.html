@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Squiggle</title>
+    <script>window.$ = window.jQuery = require('jquery');</script>
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <link rel="stylesheet" href="node_modules/simplemde/dist/simplemde.min.css">
     <script defer src="app.js"></script>
+    <script src="node_modules/jquery-ui-dist/jquery-ui.js"></script>
+    <script src="node_modules/jquery-validation/dist/jquery.validate.js"></script>
 </head>
 <body>
 <div class="entry" style="text-align: justify-all">
@@ -15,13 +18,28 @@
             <a id="CloseButton" class="control-box-inner "></a>
         </div>
     </div>
+    <form>
+        <div class="inner" style="text-align: justify-all">
+            <label for="title"></label><input style="margin-left: 1em" type="text" id="title"  name="title" placeholder="Title">
+            <label for="content-date"></label><input type="date" name="date" id="content-date" >
+            <label for="author"></label><input type="text" name="autho" id="author" value="Washerman">
+            <button style="margin-top: 2em" onclick="saveFile()">Save</button>
+            <label for="content-edit"></label><textarea name="content" id="content-edit"></textarea>
+        </div>
+    </form>
+</div>
+
+<!-- Notification -->
+<div class="content" id="notify" style="text-align: justify-all; display: none">
+    <h1 class="title-dashed" id="status">Success</h1>
+    <div class="control-box close-box">
+        <a id="CloseNotif" class="control-box-inner "></a>
+    </div>
     <div class="inner" style="text-align: justify-all">
-        <label for="title"></label><input style="margin-left: 1em" type="text" id="title" placeholder="Title">
-        <label for="content-date"></label><input type="date" id="content-date" >
-        <label for="author"></label><input type="text" id="author" value="Washerman">
-        <button style="margin-top: 2em" onclick="saveFile()">Save</button>
-        <label for="content-edit"></label><textarea id="content-edit"></textarea>
+        <h3 style="text-align: center" id="statusMessage">Message goes here</h3>
     </div>
 </div>
+
+
 </body>
 </html>
