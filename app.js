@@ -1,7 +1,7 @@
 let SimpleMDE = require('simplemde')
-const axios = require('axios')
 const request = require('request')
-
+const electron = require("electron");
+const closeBtn = document.getElementById('CloseButton')
 
 let editor = new SimpleMDE({
     element: document.getElementById('content-edit')[0],
@@ -23,8 +23,13 @@ let editor = new SimpleMDE({
         "preview"]
 })
 
-let fs = require('fs')
-let loaded = false
+
+closeBtn.addEventListener('click', function (event){
+    electron.ipcRenderer.send('close-window')
+})
+
+
+
 
 function saveFile(){
     let title = document.getElementById('title').value
@@ -40,5 +45,7 @@ function saveFile(){
         console.log(error);
         console.log(body);
     });
+
+
 }
 

@@ -1,20 +1,32 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
+const electron = require('electron')
+
+let window = null
 
 function createWindow () {
-    const win = new BrowserWindow({
+    window = new BrowserWindow({
         width: 800,
-        height: 600,
+        height: 479,
         resizable: false,
         webPreferences:{
             nodeIntegration: true,
             contextIsolation: false
-        }
+        },
+        frame: false,
+
+
     })
 
-    win.loadFile('index.html')
-    // win.setMenu(null)
+    window.loadFile('index.html').then(() => console.log("Loaded"))
+    window.setMenu(null)
+
+
 }
+
+electron.ipcMain.on('close-window', ()=>{
+    window.close()
+})
 
 app.whenReady().then(() => {
     createWindow()

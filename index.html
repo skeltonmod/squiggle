@@ -9,9 +9,14 @@
 </head>
 <body>
 <div class="entry" style="text-align: justify-all">
-    <h1 class="title-dashed">Editor</h1>
+    <div style="-webkit-app-region: drag">
+        <h1 class="title-dashed">Editor</h1>
+        <div class="control-box close-box">
+            <a id="CloseButton" class="control-box-inner "></a>
+        </div>
+    </div>
     <div class="inner" style="text-align: justify-all">
-        <label for="title"></label><input type="text" id="title" placeholder="Title">
+        <label for="title"></label><input style="margin-left: 1em" type="text" id="title" placeholder="Title">
         <label for="content-date"></label><input type="date" id="content-date" >
         <label for="author"></label><input type="text" id="author" value="Washerman">
         <button style="margin-top: 2em" onclick="saveFile()">Save</button>

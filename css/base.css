@@ -48,6 +48,9 @@ body::-webkit-scrollbar{
     display: none;
 }
 
+a {
+    -webkit-app-region: no-drag;
+}
 
 button {
     font-family: inherit;
@@ -193,6 +196,7 @@ blockquote, code{
     font-weight: normal;
     padding: 1px 0;
     margin: 1px 0 0 0;
+    -webkit-user-select: none;
 }
 
 .title-dashed:before{
@@ -256,6 +260,7 @@ blockquote, code{
 }
 .control-box-inner:active {
     box-shadow: none;
+
 }
 .zoom-box.control-box {
     right: 20px;
@@ -344,7 +349,6 @@ blockquote, code{
     clear: both;
 }
 
-
 @media screen and (max-width: 480px) {
     .video_player{
         width: 240px;
@@ -352,3 +356,4 @@ blockquote, code{
     }
 
 }
+
