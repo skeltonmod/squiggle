@@ -53,7 +53,8 @@ $(function(){
     })
 })
 
-function saveFile(){
+$("form").submit(function (e){
+    e.preventDefault()
     let title = document.getElementById('title').value
     let author = document.getElementById('author').value
     let date = document.getElementById('content-date').value
@@ -75,8 +76,6 @@ function saveFile(){
                 $("#notify").show()
                 $("#status").text(response.statusCode)
                 $("#statusMessage").text("File successfully sent to the Server")
-
-
             }
         });
     }else{
@@ -84,8 +83,6 @@ function saveFile(){
         $("#status").text(`Form Invalid`)
         $("#statusMessage").text("Form data is invalid")
     }
-
-
-
-}
+    editor.value("")
+})
 

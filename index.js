@@ -13,13 +13,13 @@ function createWindow () {
             nodeIntegration: true,
             contextIsolation: false
         },
-        frame: false,
+        frame: true,
 
 
     })
 
     window.loadFile('index.html').then(() => console.log("Loaded"))
-    window.setMenu(null)
+    // window.setMenu(null)
 
 
 }
