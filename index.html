@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Squiggle</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+<div class="entry" style="text-align: justify-all">
+    <h1 class="title-dashed">Editor</h1>
+    <div class="inner" style="text-align: justify-all">
+        <label for="title"></label><input type="text" id="title" placeholder="Title">
+        <label for="content-date"></label><input type="date" id="content-date" >
+        <label for="author"></label><input type="text" id="author" value="Washerman">
+        <button style="margin-top: 2em" onclick="saveFile()">Save</button>
+        <label for="content-edit"></label><textarea id="content-edit"></textarea>
+    </div>
+</div>
+</body>
+</html>
