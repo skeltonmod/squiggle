@@ -13,7 +13,7 @@ function createWindow () {
             nodeIntegration: true,
             contextIsolation: false
         },
-        frame: true,
+        frame: false,
 
 
     })

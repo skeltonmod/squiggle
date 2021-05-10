@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <title>Squiggle</title>
     <script>window.$ = window.jQuery = require('jquery');</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="node_modules/simplemde/dist/simplemde.min.css">
+
     <script defer src="app.js"></script>
     <script src="node_modules/jquery-ui-dist/jquery-ui.js"></script>
     <script src="node_modules/jquery-validation/dist/jquery.validate.js"></script>
+    <link rel="stylesheet" href="simplemde.css">
+
 </head>
 <body>
 <div class="entry" style="text-align: justify-all">
-    <div style="-webkit-app-region: drag">
+    <div style="-webkit-app-region: drag;">
         <h1 class="title-dashed">Editor</h1>
         <div class="control-box close-box">
             <a id="CloseButton" class="control-box-inner "></a>
@@ -35,7 +38,7 @@
     <div class="control-box close-box">
         <a id="CloseNotif" class="control-box-inner "></a>
     </div>
-    <div class="inner" style="text-align: justify-all">
+    <div class="inner" style="text-align: justify-all;">
         <h3 style="text-align: center" id="statusMessage">Message goes here</h3>
     </div>
 </div>

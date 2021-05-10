@@ -39,14 +39,10 @@ body {
     height: 100%;
     font-family: 'ChicagoFLF', 'Times New Roman', 'Georgia', serif;
     font-size: 12px;
-    font-weight: normal;
-    -ms-overflow-style: none;
+
 }
 
 
-body::-webkit-scrollbar{
-    display: none;
-}
 
 a {
     -webkit-app-region: no-drag;
@@ -91,6 +87,9 @@ a {
 	inset -1px -1px 0px 0px #999;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
 .video_player{
     width: 480px;
     height: 240px;
@@ -111,6 +110,8 @@ a {
             inset -1px -1px 0px 0px #999;
 }
 .entry .inner {
+    overflow-y: scroll;
+    max-height: 450px;
     margin: 2px 4px 4px 4px;
     border: 1px solid #111;
     background-color: #fff;
@@ -182,6 +183,7 @@ blockquote, code{
 }
 
 .title {
+    position: sticky;
     width: 100%;
     text-align: center;
     font-size: inherit;

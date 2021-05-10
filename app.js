@@ -60,12 +60,10 @@ $("form").submit(function (e){
     let date = document.getElementById('content-date').value
     let content = editor.value()
     $("#notify").draggable()
-
-
     if($("form").valid()){
         request({
             method: 'POST',
-            url: 'http://127.0.0.1:5000/getfile',
+            url: 'https://www.socialpara.site/getfile',
             json: {name: title, author: author, content: content, date: date}
         }, (error, response, body) => {
             if(response.statusCode !== 200){
@@ -76,6 +74,8 @@ $("form").submit(function (e){
                 $("#notify").show()
                 $("#status").text(response.statusCode)
                 $("#statusMessage").text("File successfully sent to the Server")
+
+                editor.value("")
             }
         });
     }else{
@@ -83,6 +83,5 @@ $("form").submit(function (e){
         $("#status").text(`Form Invalid`)
         $("#statusMessage").text("Form data is invalid")
     }
-    editor.value("")
 })
 
